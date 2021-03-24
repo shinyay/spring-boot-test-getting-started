@@ -6,6 +6,18 @@ Test support is provided by two modules:
 - `spring-boot-test-autoconfigure`: auto-configuration for tests.
 
 ## Description
+### Dependencies
+- org.springframework.boot
+  - `spring-boot-starter-test`
+
+spring-boot-starter-test contains the following libraries:
+- **JUnit 5**: The de-facto standard for unit testing Java applications.
+- **Spring Test** & Spring Boot Test: Utilities and integration test support for Spring Boot applications.
+- **AssertJ**: A fluent assertion library.
+- **Hamcrest**: A library of matcher objects (also known as constraints or predicates).
+- **Mockito**: A Java mocking framework.
+- **JSONassert**: An assertion library for JSON.
+- **JsonPath**: XPath for JSON.
 
 ## Demo
 
