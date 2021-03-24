@@ -1,6 +1,9 @@
-# Name
+# Getting Started with Spring Test
 
-Overview
+Spring Boot provides a number of utilities and annotations to help when testing your application.
+Test support is provided by two modules:
+- `spring-boot-test`:  contains core items
+- `spring-boot-test-autoconfigure`: auto-configuration for tests.
 
 ## Description
 
