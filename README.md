@@ -19,6 +19,20 @@ spring-boot-starter-test contains the following libraries:
 - **JSONassert**: An assertion library for JSON.
 - **JsonPath**: XPath for JSON.
 
+
+### Test for Application Context
+- `@Autowired` for Application Context
+- `org.assertj.core.api.Assertions.assertThat().isNotNull`
+
+```kotlin
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class ContextTest(@Autowired val helloController: HelloController) {
+	@Test
+	fun contextLoads() {
+		assertThat(helloController).isNotNull
+	}
+}
+```
 ## Demo
 
 ## Features
