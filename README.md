@@ -33,6 +33,24 @@ class ContextTest(@Autowired val helloController: HelloController) {
 	}
 }
 ```
+
+### Test for Health check with HTTP Request
+- `webEnciroment` and `RANDOM_PORT`
+- `@LocalServerPort`
+- `TestRestTemplate`
+
+```kotlin
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class HttpRequestTest(
+    @LocalServerPort val port: Int,
+    @Autowired val restTemplate: TestRestTemplate
+) {
+    @Test
+    fun helloShouldReturnDefaultMessage() {
+        Assertions.assertThat(restTemplate.getForObject("http://localhost:$port/hello", String::class.java)).isEqualTo("Hello")
+    }
+}
+```
 ## Demo
 
 ## Features
