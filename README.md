@@ -34,7 +34,7 @@ class ContextTest(@Autowired val helloController: HelloController) {
 }
 ```
 
-### Test for Health check with HTTP Request
+### Test for Controller with HTTP Request
 - `webEnciroment` and `RANDOM_PORT`
 - `@LocalServerPort`
 - `TestRestTemplate`
@@ -48,6 +48,24 @@ class HttpRequestTest(
     @Test
     fun helloShouldReturnDefaultMessage() {
         Assertions.assertThat(restTemplate.getForObject("http://localhost:$port/hello", String::class.java)).isEqualTo("Hello")
+    }
+}
+```
+
+### Test for Controller with Mock without HTTP Server
+- `@AutoConfigureMockMvc`
+- `MockMvc`
+
+```kotlin
+@SpringBootTest
+@AutoConfigureMockMvc
+class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
+    @Test
+    fun helloShouldReturnDefaultMessage() {
+        mockMvc.perform(get("/hello"))
+            .andDo(print())
+            .andExpect(status().isOk)
+            .andExpect(content().string(containsString("Hello")))
     }
 }
 ```
