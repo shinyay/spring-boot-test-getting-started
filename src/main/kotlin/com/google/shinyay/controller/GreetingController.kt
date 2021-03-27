@@ -11,4 +11,8 @@ class GreetingController(val service: GreetingService) {
     @RequestMapping("/greeting")
     @ResponseBody
     fun greeting() = service.hello()
+
+    @RequestMapping("/whattime")
+    @ResponseBody
+    fun greetingNow() = service.helloAtCurrentTime()
 }
