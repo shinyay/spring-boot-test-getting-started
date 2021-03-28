@@ -5,6 +5,7 @@ import com.google.shinyay.service.GreetingService
 import org.hamcrest.Matchers.containsString
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.`when`
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.test.web.servlet.MockMvc
@@ -15,12 +16,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 @WebMvcTest(GreetingController::class)
 class WebMVCTestForGreeting(
-    private val mockMvc: MockMvc,
-    @MockBean val service: GreetingService
+    @Autowired private val mockMvc: MockMvc
 ) {
+    @MockBean private lateinit var service: GreetingService
+
     @Test
     fun greetingShouldReturnMessageFromService() {
-        `when`(service.hello()).thenReturn("Hell")
+        `when`(service.hello()).thenReturn("Hello")
 
         mockMvc.perform(get("/greeting"))
             .andDo(print())
