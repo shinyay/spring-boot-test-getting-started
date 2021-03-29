@@ -69,6 +69,21 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
     }
 }
 ```
+
+### Web layer Slice Test with `@WebMvcTest`
+`@WebMvcTest` makes you get Spring Context includes components required for testing Spring MVC.
+- @Controller
+- @ControllerAdvice
+- @JsonComponent
+- Converter
+- Filter
+- WebMvcConfigurer
+
+- `Not Included`
+  - @Service
+  - @Component
+  - @Repository
+
 ## Demo
 
 ## Features
