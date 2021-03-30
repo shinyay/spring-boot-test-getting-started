@@ -137,7 +137,8 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
 
-### Whole
+### Whole Application Test with `@SpringBootTest`
+- Everything included
 
 ## Demo
 
