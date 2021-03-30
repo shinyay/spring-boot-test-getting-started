@@ -84,6 +84,13 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
   - @Component
   - @Repository
 
+### JPA Components Slice Test with `@DataJpaTest`
+`@DataJpaTest` makes you can test any JPA related parts.
+- @Repository
+- EntityManager
+- TestEntityManager
+- DataSource
+
 ## Demo
 
 ## Features
