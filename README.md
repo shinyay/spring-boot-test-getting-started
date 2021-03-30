@@ -107,6 +107,15 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
 
+### MongoDB access Slice Test with `@DataMongoTest`
+- MongoTemplate
+- CrudRepository
+
+- `Not Included`
+  - @Controller
+  - @Service
+  - @Component
+
 ## Demo
 
 ## Features
