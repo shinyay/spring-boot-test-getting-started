@@ -126,6 +126,19 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Service
   - @Component
   - @Repository
+  
+### HTTP clients Slice Test with `@RestClientTest`
+- RestTemplateBuilder
+- MockRestServiceServer
+
+- `Not Included`
+  - @Controller
+  - @Service
+  - @Component
+  - @Repository
+
+### Whole
+
 ## Demo
 
 ## Features
