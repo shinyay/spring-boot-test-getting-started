@@ -91,6 +91,12 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 - TestEntityManager
 - DataSource
 
+- `Not Included`
+  - @Controller
+  - @Service
+  - @Component
+
+
 ## Demo
 
 ## Features
