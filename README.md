@@ -116,6 +116,16 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Service
   - @Component
 
+### JSON serialization Slice Test with `@JsonTest`
+- @JsonComponent
+- ObjectMapper
+- Module
+
+- `Not Included`
+  - @Controller
+  - @Service
+  - @Component
+  - @Repository
 ## Demo
 
 ## Features
