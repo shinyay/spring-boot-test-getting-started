@@ -96,6 +96,16 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
   - @Service
   - @Component
 
+### JDBC access Slice Test with `@JdbcTest`
+If your application uses the `JdbcTemplate` instead of JPA for the database access, Spring Boot also covers testing this slice of your application.
+- JdbcTemplate
+- DataSource
+
+- `Not Included`
+  - @Controller
+  - @Service
+  - @Component
+  - @Repository
 
 ## Demo
 
