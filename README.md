@@ -69,8 +69,16 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
     }
 }
 ```
+### Slicing Test
+- `@WebMvcTest`
+- `@DataJpaTest`
+- `@JdbcTest`
+- `@DataMongoTest`
+- `@JsonTest`
+- `@RestClientTest`
+- (`@SpringBootTest`)
 
-### Web layer Slice Test with `@WebMvcTest`
+#### Web layer Slice Test with `@WebMvcTest`
 `@WebMvcTest` makes you get Spring Context includes components required for testing Spring MVC.
 - @Controller
 - @ControllerAdvice
@@ -84,7 +92,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
   - @Component
   - @Repository
 
-### JPA Components Slice Test with `@DataJpaTest`
+#### JPA Components Slice Test with `@DataJpaTest`
 `@DataJpaTest` makes you can test any JPA related parts.
 - @Repository
 - EntityManager
@@ -96,7 +104,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
   - @Service
   - @Component
 
-### JDBC access Slice Test with `@JdbcTest`
+#### JDBC access Slice Test with `@JdbcTest`
 If your application uses the `JdbcTemplate` instead of JPA for the database access, Spring Boot also covers testing this slice of your application.
 - JdbcTemplate
 - DataSource
@@ -107,7 +115,7 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
 
-### MongoDB access Slice Test with `@DataMongoTest`
+#### MongoDB access Slice Test with `@DataMongoTest`
 - MongoTemplate
 - CrudRepository
 
@@ -116,7 +124,7 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Service
   - @Component
 
-### JSON serialization Slice Test with `@JsonTest`
+#### JSON serialization Slice Test with `@JsonTest`
 - @JsonComponent
 - ObjectMapper
 - Module
@@ -127,7 +135,7 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
   
-### HTTP clients Slice Test with `@RestClientTest`
+#### HTTP clients Slice Test with `@RestClientTest`
 - RestTemplateBuilder
 - MockRestServiceServer
 
@@ -137,7 +145,7 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
 
-### Whole Application Test with `@SpringBootTest`
+#### Whole Application Test with `@SpringBootTest`
 - Everything included
 
 ## Demo
