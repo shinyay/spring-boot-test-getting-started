@@ -10,7 +10,7 @@ class ViewController {
     @GetMapping("/home")
     fun home(viewHome: ModelAndView): ModelAndView {
         viewHome.viewName = "home"
-        viewHome.addObject("userName", "shinyay")
+        viewHome.addObject("msg", "shinyay")
         return viewHome
     }
 }
