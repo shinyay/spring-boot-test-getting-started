@@ -153,9 +153,15 @@ Static factory methods for ResultMatcher-based result actions.
 
 - RequestResultMatchers
   - accessed via `MockMvcResultMatchers.request()`
-
+- ModelResultMatchers
+  - accessed via `MockMvcResultMatchers.model()`.
 #### RequestResultMatchers
 Factory for assertions on the request.
+
+#### ModelResultMatchers
+Factory for assertions on the model.
+
+
 
 ## Demo
 
