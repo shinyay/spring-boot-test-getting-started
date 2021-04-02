@@ -148,6 +148,11 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
 #### Whole Application Test with `@SpringBootTest`
 - Everything included
 
+### MockMvcResultMatchers
+Static factory methods for ResultMatcher-based result actions.
+
+
+
 ## Demo
 
 ## Features
