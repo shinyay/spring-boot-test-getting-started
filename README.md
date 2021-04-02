@@ -159,7 +159,9 @@ Static factory methods for ResultMatcher-based result actions.
   - accessed via `MockMvcResultMatchers.view()`
 - StatusResultMatchers
   - accessed via `MockMvcResultMatchers.status()`
-  
+- ContentResultMatchers
+  -  accessed via `MockMvcResultMatchers.content()`
+
 #### RequestResultMatchers
 Factory for assertions on the request.
 
@@ -172,6 +174,8 @@ Factory for assertions on the selected view.
 #### StatusResultMatchers
 Factory for assertions on the response status.
 
+#### ContentResultMatchers
+Factory for response content assertions.
 
 ## Demo
 
