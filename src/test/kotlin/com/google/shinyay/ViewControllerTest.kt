@@ -18,5 +18,6 @@ class ViewControllerTest(@Autowired val mockMvc: MockMvc) {
         ).andExpect(status().is2xxSuccessful)
             .andExpect(view().name("home"))
             .andExpect(model().attributeExists("msg"))
+            .andExpect(model().attribute("msg", "shinyay"))
     }
 }
