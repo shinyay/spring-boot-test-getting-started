@@ -5,6 +5,7 @@ import org.hamcrest.Matchers.containsString
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
@@ -16,11 +17,14 @@ class ViewControllerTest(@Autowired val mockMvc: MockMvc) {
     fun homePage() {
         mockMvc.perform(
             get("/home")
-        ).andExpect(status().is2xxSuccessful)
-            .andExpect(view().name("home"))
-            .andExpect(model().attributeExists("msg"))
-            .andExpect(model().attribute("msg", "shinyay"))
-            .andExpect(content().contentType("text/html;charset=UTF-8"))
-            .andExpect(content().string(containsString("shinyay")))
+        ).andExpect {
+            status().is2xxSuccessful
+            view().name("home")
+            model().attributeExists("msg")
+            model().attribute("msg", "shinyay")
+            content().contentType(MediaType.TEXT_HTML)
+            content().string(containsString("shinyay"))
+        }
+
     }
 }
