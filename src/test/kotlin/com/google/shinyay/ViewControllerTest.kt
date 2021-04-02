@@ -19,5 +19,6 @@ class ViewControllerTest(@Autowired val mockMvc: MockMvc) {
             .andExpect(view().name("home"))
             .andExpect(model().attributeExists("msg"))
             .andExpect(model().attribute("msg", "shinyay"))
+            .andExpect(content().contentType("text/html;charset=UTF-8"))
     }
 }
