@@ -151,7 +151,11 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
 ### MockMvcResultMatchers
 Static factory methods for ResultMatcher-based result actions.
 
+- RequestResultMatchers
+  - accessed via `MockMvcResultMatchers.request()`
 
+#### RequestResultMatchers
+Factory for assertions on the request.
 
 ## Demo
 
