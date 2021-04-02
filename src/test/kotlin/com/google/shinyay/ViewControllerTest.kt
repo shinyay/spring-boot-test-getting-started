@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 
 @WebMvcTest(controllers = [ViewController::class])
 class ViewControllerTest(@Autowired val mockMvc: MockMvc) {
@@ -16,5 +16,7 @@ class ViewControllerTest(@Autowired val mockMvc: MockMvc) {
         mockMvc.perform(
             get("/home")
         ).andExpect(status().is2xxSuccessful)
+            .andExpect(view().name("home"))
+            .andExpect(model().attributeExists("msg"))
     }
 }
