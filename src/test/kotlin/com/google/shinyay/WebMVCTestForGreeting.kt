@@ -21,12 +21,20 @@ class WebMVCTestForGreeting(
     @MockBean private lateinit var service: GreetingService
 
     @Test
-    fun greetingShouldReturnMessageFromService() {
+    fun greetingShouldBeOk() {
         `when`(service.hello()).thenReturn("Hello")
 
         mockMvc.perform(get("/greeting"))
             .andDo(print())
             .andExpect(status().isOk)
+    }
+
+    @Test
+    fun greetingShouldReturnMessageFromService() {
+        `when`(service.hello()).thenReturn("Hello")
+
+        mockMvc.perform(get("/greeting"))
+            .andDo(print())
             .andExpect(content().string(containsString("Hello")))
     }
 }
