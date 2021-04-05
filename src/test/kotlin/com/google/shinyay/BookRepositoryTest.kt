@@ -36,4 +36,10 @@ class BookRepositoryTest(
         assertThat(repository.findAllByAuthorOrderByPrice("shinyay")[0].title).isEqualTo("Spring Boot")
         assertThat(repository.findAllByAuthorOrderByPrice("shinyay")[0].price).isEqualTo(300)
     }
+
+    @Test
+    fun titleOrderedByPriceDescShouldReturnCorrectOne() {
+        assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay")[0].title).isEqualTo("Spring Cloud GCP")
+        assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay")[0].price).isEqualTo(1100)
+    }
 }
