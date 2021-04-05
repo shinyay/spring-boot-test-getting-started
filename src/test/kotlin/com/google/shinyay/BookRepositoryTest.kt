@@ -17,12 +17,16 @@ class BookRepositoryTest(
 
     @BeforeEach
     fun setUp() {
-        entityManager.persist(Book(title = "Spring Test", author = "shinyay", price = 500))
-//        repository.save(Book(title = "Spring Test", author = "shinyay", price = 500))
+        entityManager.persist(Book(title = "Spring Boot", author = "shinyay", price = 300))
+        entityManager.persist(Book(title = "Spring Test", author = "shinyay", price = 900))
+        entityManager.persist(Book(title = "Spring Cloud", author = "shinyay", price = 700))
+        entityManager.persist(Book(title = "Spring Cloud GCP", author = "shinyay", price = 1100))
+        entityManager.persist(Book(title = "Google Cloud", author = "shinyay", price = 500))
+
     }
 
     @Test
     fun sizeShouldBeOne() {
-        assertThat(repository.count()).isEqualTo(1)
+        assertThat(repository.findAllByAuthorOrderByPrice("shinyay").size).isEqualTo(4)
     }
 }
