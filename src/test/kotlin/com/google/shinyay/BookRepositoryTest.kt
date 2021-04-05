@@ -26,7 +26,14 @@ class BookRepositoryTest(
     }
 
     @Test
-    fun sizeShouldBeOne() {
-        assertThat(repository.findAllByAuthorOrderByPrice("shinyay").size).isEqualTo(4)
+    fun initialSizeShouldBeFive() {
+        assertThat(repository.findAllByAuthorOrderByPrice("shinyay").size).isEqualTo(5)
+        assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay").size).isEqualTo(5)
+    }
+
+    @Test
+    fun titleOrderedByPriceAscShouldReturnCorrectOne() {
+        assertThat(repository.findAllByAuthorOrderByPrice("shinyay")[0].title).isEqualTo("Spring Boot")
+        assertThat(repository.findAllByAuthorOrderByPrice("shinyay")[0].price).isEqualTo(300)
     }
 }

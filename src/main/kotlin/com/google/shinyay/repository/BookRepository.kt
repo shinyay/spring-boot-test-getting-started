@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface BookRepository: JpaRepository<Book, Long> {
     fun findAllByAuthorOrderByPrice(author: String): List<Book>
+
+    fun findAllByAuthorOrderByPriceDesc(author: String): List<Book>
 }
