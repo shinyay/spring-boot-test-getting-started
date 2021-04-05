@@ -104,7 +104,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
   - @Service
   - @Component
 
-##### Test Practice - JPA Components
+##### Test Practices - JPA Components
 **Setup Before Test**
 
 You can use `TestEntityManager` to operate Database instead of Repository Class.
@@ -113,6 +113,26 @@ You can use `TestEntityManager` to operate Database instead of Repository Class.
 @Autowired
 lateinit var entityManager: TestEntityManager
 ```
+
+**Display SQL Logging on Standard out and Logging Framework**
+```yaml
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+```
+
 #### JDBC access Slice Test with `@JdbcTest`
 If your application uses the `JdbcTemplate` instead of JPA for the database access, Spring Boot also covers testing this slice of your application.
 - JdbcTemplate
