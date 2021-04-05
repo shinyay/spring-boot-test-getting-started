@@ -46,4 +46,13 @@ class BookRepositoryTest(
         assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay")[0].title).isEqualTo("Spring Cloud GCP")
         assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay")[0].price).isEqualTo(1100)
     }
+
+    @Test
+    fun shouldReturnBookAfterPersistence() {
+        val book = repository.save(Book(title = "GKE", author = "Google", price = 1000))
+
+        assertThat(book).hasFieldOrPropertyWithValue("title", "GKE")
+        assertThat(book).hasFieldOrPropertyWithValue("author", "Google")
+        assertThat(book).hasFieldOrPropertyWithValue("price", 1000L)
+    }
 }
