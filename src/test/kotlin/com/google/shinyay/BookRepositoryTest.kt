@@ -7,13 +7,18 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
 
 @DataJpaTest
-class BookRepositoryTest(@Autowired val repository: BookRepository) {
+class BookRepositoryTest(
+    @Autowired val repository: BookRepository,
+    @Autowired val entityManager: TestEntityManager
+) {
 
     @BeforeEach
     fun setUp() {
-        repository.save(Book(title = "Spring Test", author = "shinyay", price = 500))
+        entityManager.persist(Book(title = "Spring Test", author = "shinyay", price = 500))
+//        repository.save(Book(title = "Spring Test", author = "shinyay", price = 500))
     }
 
     @Test
