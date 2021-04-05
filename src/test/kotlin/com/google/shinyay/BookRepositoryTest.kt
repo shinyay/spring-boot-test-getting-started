@@ -17,7 +17,8 @@ class BookRepositoryTest(
     @Autowired
     val repository: BookRepository
 ) {
-    @Autowired lateinit var entityManager: TestEntityManager
+    @Autowired
+    lateinit var entityManager: TestEntityManager
 
     @BeforeEach
     fun setUp() {
