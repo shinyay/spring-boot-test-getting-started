@@ -61,4 +61,14 @@ class BookRepositoryTest(
         repository.deleteAll()
         assertThat(repository.findAll()).hasSize(0)
     }
+
+    @Test
+    fun shouldFindBookByTitle() {
+        val book1 = Book(title = "GKE-Tutorial", author = "yanashin", price = 500)
+        val book2 = Book(title = "CloudRun-Tutorial", author = "yanashin", price = 300)
+        entityManager.persist(book1)
+        entityManager.persist(book2)
+        val books = repository.findBookByTitleContains("Tutorial")
+        assertThat(books).hasSize(2).contains(book1, book2)
+    }
 }
