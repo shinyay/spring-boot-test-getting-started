@@ -9,4 +9,6 @@ interface BookRepository: JpaRepository<Book, Long> {
     fun findAllByAuthorOrderByPrice(author: String): List<Book>
 
     fun findAllByAuthorOrderByPriceDesc(author: String): List<Book>
+
+    fun findBookByTitleContains(title: String): List<Book>
 }
