@@ -3,7 +3,6 @@ package com.google.shinyay
 import com.google.shinyay.entity.Book
 import com.google.shinyay.repository.BookRepository
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
@@ -54,5 +53,12 @@ class BookRepositoryTest(
         assertThat(book).hasFieldOrPropertyWithValue("title", "GKE")
         assertThat(book).hasFieldOrPropertyWithValue("author", "Google")
         assertThat(book).hasFieldOrPropertyWithValue("price", 1000L)
+    }
+
+    @Test
+    fun shouldReturnSizeZeroAfterDelete() {
+        assertThat(repository.findAll()).hasSize(5)
+        repository.deleteAll()
+        assertThat(repository.findAll()).hasSize(0)
     }
 }
