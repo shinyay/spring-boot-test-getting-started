@@ -59,6 +59,7 @@ class BookRepositoryTest(
     fun shouldReturnSizeZeroAfterDelete() {
         assertThat(repository.findAll()).hasSize(5)
         repository.deleteAll()
+        assertThat(repository.findAll()).isEmpty()
         assertThat(repository.findAll()).hasSize(0)
     }
 
