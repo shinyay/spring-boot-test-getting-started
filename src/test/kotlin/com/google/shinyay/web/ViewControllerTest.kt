@@ -1,4 +1,4 @@
-package com.google.shinyay
+package com.google.shinyay.web
 
 import com.google.shinyay.controller.ViewController
 import org.hamcrest.Matchers.containsString

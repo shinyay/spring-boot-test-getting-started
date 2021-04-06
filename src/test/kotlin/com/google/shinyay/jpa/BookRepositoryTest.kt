@@ -1,4 +1,4 @@
-package com.google.shinyay
+package com.google.shinyay.jpa
 
 import com.google.shinyay.entity.Book
 import com.google.shinyay.repository.BookRepository
