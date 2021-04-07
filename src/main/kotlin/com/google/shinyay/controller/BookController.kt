@@ -1,4 +1,16 @@
 package com.google.shinyay.controller
 
-class BookController {
+import com.google.shinyay.entity.Book
+import com.google.shinyay.service.BookService
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class BookController(val service: BookService) {
+
+    @PostMapping("/book")
+    fun displayRegisteredBookTitle(@RequestBody book:Book): Book {
+        return service.displayBook(book)
+    }
 }
