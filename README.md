@@ -71,11 +71,14 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 ```
 ### Slicing Test
 - `@WebMvcTest`
-- `@DataJpaTest`
-- `@JdbcTest`
-- `@DataMongoTest`
-- `@JsonTest`
+- `@WebFluxTest`
 - `@RestClientTest`
+- `@JdbcTest`
+- `@DataJpaTest`
+- `@DataMongoTest`
+- `@DataRedisTest`
+- `@DataLdapTest`
+- `@JsonTest`
 - (`@SpringBootTest`)
 
 #### Web layer Slice Test with `@WebMvcTest`
@@ -173,6 +176,8 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Service
   - @Component
   - @Repository
+
+##### 
 
 #### Whole Application Test with `@SpringBootTest`
 - Everything included
