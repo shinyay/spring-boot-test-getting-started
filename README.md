@@ -167,7 +167,7 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
   
-#### HTTP clients Slice Test with `@RestClientTest`
+#### REST  Clients Slice Test with `@RestClientTest`
 - RestTemplateBuilder
 - MockRestServiceServer
 
@@ -177,7 +177,20 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Component
   - @Repository
 
-##### 
+##### MockRestServiceServer
+@RestClientTest annotation is used to test RestTemplate to interact with external services.
+The Spring Test module includes a mock server named MockRestServiceServer.
+With this approach, we configure the server to return a particular object when a specific request is dispatched through our RestTemplate instance.
+
+```kotlin
+mockServer.expect(ExpectedCount.once(), 
+  requestTo(new URI("http://localhost:8080/employee/E001")))
+  .andExpect(method(HttpMethod.GET))
+  .andRespond(withStatus(HttpStatus.OK)
+  .contentType(MediaType.APPLICATION_JSON)
+  .body(mapper.writeValueAsString(emp))
+)
+```
 
 #### Whole Application Test with `@SpringBootTest`
 - Everything included
