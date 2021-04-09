@@ -1,7 +1,7 @@
 package com.google.shinyay.jpa
 
 import com.google.shinyay.entity.Book
-import com.google.shinyay.repository.BookRepository
+import com.google.shinyay.repository.BookDaoRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -12,9 +12,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DataJpaTest
-class BookRepositoryTest(
+class BookDaoRepositoryTest(
     @Autowired
-    val repository: BookRepository
+    val daoRepository: BookDaoRepository
 ) {
     @Autowired
     lateinit var entityManager: TestEntityManager
@@ -30,25 +30,25 @@ class BookRepositoryTest(
 
     @Test
     fun initialSizeShouldBeFive() {
-        assertThat(repository.findAllByAuthorOrderByPrice("shinyay").size).isEqualTo(5)
-        assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay").size).isEqualTo(5)
+        assertThat(daoRepository.findAllByAuthorOrderByPrice("shinyay").size).isEqualTo(5)
+        assertThat(daoRepository.findAllByAuthorOrderByPriceDesc("shinyay").size).isEqualTo(5)
     }
 
     @Test
     fun titleOrderedByPriceAscShouldReturnCorrectOne() {
-        assertThat(repository.findAllByAuthorOrderByPrice("shinyay")[0].title).isEqualTo("Spring Boot")
-        assertThat(repository.findAllByAuthorOrderByPrice("shinyay")[0].price).isEqualTo(300)
+        assertThat(daoRepository.findAllByAuthorOrderByPrice("shinyay")[0].title).isEqualTo("Spring Boot")
+        assertThat(daoRepository.findAllByAuthorOrderByPrice("shinyay")[0].price).isEqualTo(300)
     }
 
     @Test
     fun titleOrderedByPriceDescShouldReturnCorrectOne() {
-        assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay")[0].title).isEqualTo("Spring Cloud GCP")
-        assertThat(repository.findAllByAuthorOrderByPriceDesc("shinyay")[0].price).isEqualTo(1100)
+        assertThat(daoRepository.findAllByAuthorOrderByPriceDesc("shinyay")[0].title).isEqualTo("Spring Cloud GCP")
+        assertThat(daoRepository.findAllByAuthorOrderByPriceDesc("shinyay")[0].price).isEqualTo(1100)
     }
 
     @Test
     fun shouldReturnBookAfterPersistence() {
-        val book = repository.save(Book(title = "GKE", author = "Google", price = 1000))
+        val book = daoRepository.save(Book(title = "GKE", author = "Google", price = 1000))
 
         assertThat(book).hasFieldOrPropertyWithValue("title", "GKE")
         assertThat(book).hasFieldOrPropertyWithValue("author", "Google")
@@ -57,10 +57,10 @@ class BookRepositoryTest(
 
     @Test
     fun shouldReturnSizeZeroAfterDelete() {
-        assertThat(repository.findAll()).hasSize(5)
-        repository.deleteAll()
-        assertThat(repository.findAll()).isEmpty()
-        assertThat(repository.findAll()).hasSize(0)
+        assertThat(daoRepository.findAll()).hasSize(5)
+        daoRepository.deleteAll()
+        assertThat(daoRepository.findAll()).isEmpty()
+        assertThat(daoRepository.findAll()).hasSize(0)
     }
 
     @Test
@@ -69,7 +69,7 @@ class BookRepositoryTest(
         val book2 = Book(title = "CloudRun-Tutorial", author = "yanashin", price = 300)
         entityManager.persist(book1)
         entityManager.persist(book2)
-        val books = repository.findBookByTitleContains("Tutorial")
+        val books = daoRepository.findBookByTitleContains("Tutorial")
         assertThat(books).hasSize(2).contains(book1, book2)
     }
 }
