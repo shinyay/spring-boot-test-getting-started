@@ -73,13 +73,15 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 - `@WebMvcTest`
 - `@WebFluxTest`
 - `@RestClientTest`
-- `@JdbcTest`
+- `@DataJdbcTest`
 - `@DataJpaTest`
 - `@DataMongoTest`
 - `@DataRedisTest`
 - `@DataLdapTest`
 - `@JsonTest`
 - (`@SpringBootTest`)
+
+Reference: [Test Auto-configuration Annotations](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-test-auto-configuration.html)
 
 #### Web layer Slice Test with `@WebMvcTest`
 `@WebMvcTest` makes you get Spring Context includes components required for testing Spring MVC.
@@ -136,7 +138,7 @@ logging:
               BasicBinder: TRACE
 ```
 
-#### JDBC access Slice Test with `@JdbcTest`
+#### JDBC access Slice Test with `@DataJdbcTest`
 If your application uses the `JdbcTemplate` instead of JPA for the database access, Spring Boot also covers testing this slice of your application.
 - JdbcTemplate
 - DataSource
@@ -246,7 +248,7 @@ Factory for response header assertions.
 
 ## References
 - [MockMvcResultMatchers API Document](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/web/servlet/result/MockMvcResultMatchers.html)
-
+- [Sliced Test Auto-configuration Annotations](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-test-auto-configuration.html)
 
 ## Licence
 
