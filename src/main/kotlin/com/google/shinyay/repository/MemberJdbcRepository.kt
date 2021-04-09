@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 @Repository
 class MemberJdbcRepository(val jdbcTemplate: JdbcTemplate) {
 
-    fun getCountOfMembers() {
-        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM member")
+    fun getCountOfMembers(): Long? {
+        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM member", Long::class.java)
     }
 }
