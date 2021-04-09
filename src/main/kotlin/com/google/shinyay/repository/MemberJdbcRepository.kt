@@ -5,9 +5,9 @@ import org.springframework.jdbc.core.queryForObject
 import org.springframework.stereotype.Repository
 
 @Repository
-class BookJdbcRepository(val jdbcTemplate: JdbcTemplate) {
+class MemberJdbcRepository(val jdbcTemplate: JdbcTemplate) {
 
-    fun getCountOfBooks() {
-        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM book")
+    fun getCountOfMembers() {
+        return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM member")
     }
 }
