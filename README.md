@@ -109,7 +109,7 @@ Reference: [Test Auto-configuration Annotations](https://docs.spring.io/spring-b
   - @Service
   - @Component
 
-##### Test Practices - JPA Components
+##### Test Practices - Spring Data JPA
 **Setup Before Test**
 
 You can use `TestEntityManager` to operate Database instead of Repository Class.
@@ -148,6 +148,33 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
   - @Service
   - @Component
   - @Repository
+
+##### Test Practices - Spring Data JDBC
+**`@Sql` Annotation**
+@Sql annotation allows us to specify the SQL files to run before the test.
+
+- `scripts`: we can declare the paths to SQL script files to execute
+- `statements`: we can declare inline SQL statements to execute
+- `executionPhase`: we can also specify when to execute the scripts
+  - `BEFORE_TEST_METHOD`
+  - `AFTER_TEST_METHOD`
+- `config`: local configuration for the SQL scripts
+  - `@SqlConfig`
+    - `blockCommentStartDelimiter`: delimiter to identify the start of block comments in SQL script files
+    - `blockCommentEndDelimiter`: delimiter to denote the end of block comments in SQL script files
+    - `commentPrefix`: prefix to identify single-line comments in SQL script files
+    - `dataSource`: name of the javax.sql.DataSource bean against which the scripts and statements will be run
+    - `encoding`: encoding for the SQL script files, default is platform encoding
+    - `errorMode`: mode that will be used when an error is encountered running the scripts
+    - `separator`: string used to separate individual statements, default is “–“
+    - `transactionManager`: bean name of the PlatformTransactionManager that will be used for transactions
+    - `transactionMode`: the mode that will be used when executing scripts in transaction
+
+```kotlin
+@Sql(scripts = ["classpath:schema.sql", "classpath:data.sql"])
+```
+
+**`@Import` Annotation**
 
 #### MongoDB access Slice Test with `@DataMongoTest`
 - MongoTemplate
