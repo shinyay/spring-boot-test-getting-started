@@ -170,6 +170,15 @@ If your application uses the `JdbcTemplate` instead of JPA for the database acce
     - `transactionManager`: bean name of the PlatformTransactionManager that will be used for transactions
     - `transactionMode`: the mode that will be used when executing scripts in transaction
 
+You can deploy SQL files under `src/main/resources` and `src/test/resources`
+The following files are loadable:
+- `schema.sql`
+- `schema-${platform}.sql`
+- `data.sql`
+- `data-${platform}.sql`
+
+`${platform}` is specified by `spring.datasource.platform`
+
 ```kotlin
 @Sql(scripts = ["classpath:schema.sql", "classpath:data.sql"])
 ```
