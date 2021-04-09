@@ -184,6 +184,11 @@ The following files are loadable:
 ```
 
 **`@Import` Annotation**
+Test class can not load Repository class. Therefore we should use `@Import` to load the class specifically.
+
+```kotlin
+@Import(MemberJdbcRepository::class)
+```
 
 #### MongoDB access Slice Test with `@DataMongoTest`
 - MongoTemplate
