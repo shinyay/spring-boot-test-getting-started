@@ -96,6 +96,43 @@ Reference: [Test Auto-configuration Annotations](https://docs.spring.io/spring-b
   - @Service
   - @Component
   - @Repository
+  
+##### Test Practices - MockMvcResultMatchers
+Static factory methods for ResultMatcher-based result actions.
+
+- RequestResultMatchers
+  - accessed via `MockMvcResultMatchers.request()`
+- ModelResultMatchers
+  - accessed via `MockMvcResultMatchers.model()`
+- ViewResultMatchers
+  - accessed via `MockMvcResultMatchers.view()`
+- StatusResultMatchers
+  - accessed via `MockMvcResultMatchers.status()`
+- ContentResultMatchers
+  - accessed via `MockMvcResultMatchers.content()`
+- HeaderResultMatchers
+  - available via `MockMvcResultMatchers.header()`
+
+#### RequestResultMatchers
+Factory for assertions on the request.
+
+#### ModelResultMatchers
+Factory for assertions on the model.
+
+#### ViewResultMatchers
+Factory for assertions on the selected view.
+
+#### StatusResultMatchers
+Factory for assertions on the response status.
+
+#### ContentResultMatchers
+Factory for response content assertions.
+
+#### HeaderResultMatchers
+Factory for response header assertions.
+
+
+
 
 #### JPA Components Slice Test with `@DataJpaTest`
 `@DataJpaTest` makes you can test any JPA related parts.
@@ -238,39 +275,7 @@ mockServer.expect(ExpectedCount.once(),
 #### Whole Application Test with `@SpringBootTest`
 - Everything included
 
-### MockMvcResultMatchers
-Static factory methods for ResultMatcher-based result actions.
 
-- RequestResultMatchers
-  - accessed via `MockMvcResultMatchers.request()`
-- ModelResultMatchers
-  - accessed via `MockMvcResultMatchers.model()`
-- ViewResultMatchers
-  - accessed via `MockMvcResultMatchers.view()`
-- StatusResultMatchers
-  - accessed via `MockMvcResultMatchers.status()`
-- ContentResultMatchers
-  - accessed via `MockMvcResultMatchers.content()`
-- HeaderResultMatchers
-  - available via `MockMvcResultMatchers.header()`
-
-#### RequestResultMatchers
-Factory for assertions on the request.
-
-#### ModelResultMatchers
-Factory for assertions on the model.
-
-#### ViewResultMatchers
-Factory for assertions on the selected view.
-
-#### StatusResultMatchers
-Factory for assertions on the response status.
-
-#### ContentResultMatchers
-Factory for response content assertions.
-
-#### HeaderResultMatchers
-Factory for response header assertions.
 
 
 
