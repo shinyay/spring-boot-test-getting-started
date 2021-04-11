@@ -102,37 +102,22 @@ Static factory methods for ResultMatcher-based result actions.
 
 - RequestResultMatchers
   - accessed via `MockMvcResultMatchers.request()`
+  - Factory for assertions on the request
 - ModelResultMatchers
   - accessed via `MockMvcResultMatchers.model()`
+  - Factory for assertions on the model
 - ViewResultMatchers
   - accessed via `MockMvcResultMatchers.view()`
+  - Factory for assertions on the selected view
 - StatusResultMatchers
   - accessed via `MockMvcResultMatchers.status()`
+  - Factory for assertions on the response status
 - ContentResultMatchers
   - accessed via `MockMvcResultMatchers.content()`
+  - Factory for response content assertions
 - HeaderResultMatchers
   - available via `MockMvcResultMatchers.header()`
-
-#### RequestResultMatchers
-Factory for assertions on the request.
-
-#### ModelResultMatchers
-Factory for assertions on the model.
-
-#### ViewResultMatchers
-Factory for assertions on the selected view.
-
-#### StatusResultMatchers
-Factory for assertions on the response status.
-
-#### ContentResultMatchers
-Factory for response content assertions.
-
-#### HeaderResultMatchers
-Factory for response header assertions.
-
-
-
+  - Factory for response header assertions
 
 #### JPA Components Slice Test with `@DataJpaTest`
 `@DataJpaTest` makes you can test any JPA related parts.
