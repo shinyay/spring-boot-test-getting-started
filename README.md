@@ -73,8 +73,8 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 |Test Slice|Imported Auto-Configuration|
 |----------|---------------------------|
 |`@WebMvcTest`|CacheAutoConfiguration<br>MessageSourceAutoConfiguration<br>SpringDataWebAutoConfiguration<br>FreeMarkerAutoConfiguration<br>GroovyTemplateAutoConfiguration<br>GsonAutoConfiguration<br>HypermediaAutoConfiguration<br>HttpMessageConvertersAutoConfiguration<br>JacksonAutoConfiguration<br>JsonbAutoConfiguration<br>MustacheAutoConfiguration<br>OAuth2ClientAutoConfiguration<br>OAuth2ResourceServerAutoConfiguration<br>SecurityAutoConfiguration<br>SecurityFilterAutoConfiguration<br>UserDetailsServiceAutoConfiguration<br>TaskExecutionAutoConfiguration<br>ThymeleafAutoConfiguration<br>ValidationAutoConfiguration<br>HttpEncodingAutoConfiguration<br>WebMvcAutoConfiguration<br>ErrorMvcAutoConfiguration<br>MockMvcAutoConfiguration<br>MockMvcSecurityConfiguration<br>MockMvcWebClientAutoConfiguration<br>MockMvcWebDriverAutoConfiguration|
-|||
-|||
+|`@WebFluxTest`|CacheAutoConfiguration<br>MessageSourceAutoConfiguration<br>FreeMarkerAutoConfiguration<br>GsonAutoConfiguration<br>CodecsAutoConfiguration<br>JacksonAutoConfiguration<br>JsonbAutoConfiguration<br>MustacheAutoConfiguration<br>ReactiveOAuth2ClientAutoConfiguration<br>ReactiveOAuth2ResourceServerAutoConfiguration<br>ReactiveSecurityAutoConfiguration<br>ReactiveUserDetailsServiceAutoConfiguration<br>ThymeleafAutoConfiguration<br>ValidationAutoConfiguration<br>WebFluxAutoConfiguration<br>ErrorWebFluxAutoConfiguration<br>WebTestClientAutoConfiguration|
+|`@RestClientTest`|<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|
 |||
 |||
 |||
@@ -89,8 +89,8 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 
 
 - 
-- `@WebFluxTest`
-- `@RestClientTest`
+- 
+- 
 - `@DataJdbcTest`
 - `@DataJpaTest`
 - `@DataMongoTest`
