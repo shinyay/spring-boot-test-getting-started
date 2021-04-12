@@ -70,7 +70,25 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 }
 ```
 ### Slicing Test
-- `@WebMvcTest`
+|Test Slice|Imported Auto-Configuration|
+|----------|---------------------------|
+|`@WebMvcTest`|CacheAutoConfiguration<br>MessageSourceAutoConfiguration<br>SpringDataWebAutoConfiguration<br>FreeMarkerAutoConfiguration<br>GroovyTemplateAutoConfiguration<br>GsonAutoConfiguration<br>HypermediaAutoConfiguration<br>HttpMessageConvertersAutoConfiguration<br>JacksonAutoConfiguration<br>JsonbAutoConfiguration<br>MustacheAutoConfiguration<br>OAuth2ClientAutoConfiguration<br>OAuth2ResourceServerAutoConfiguration<br>SecurityAutoConfiguration<br>SecurityFilterAutoConfiguration<br>UserDetailsServiceAutoConfiguration<br>TaskExecutionAutoConfiguration<br>ThymeleafAutoConfiguration<br>ValidationAutoConfiguration<br>HttpEncodingAutoConfiguration<br>WebMvcAutoConfiguration<br>ErrorMvcAutoConfiguration<br>MockMvcAutoConfiguration<br>MockMvcSecurityConfiguration<br>MockMvcWebClientAutoConfiguration<br>MockMvcWebDriverAutoConfiguration|
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+|||
+
+
+
+- 
 - `@WebFluxTest`
 - `@RestClientTest`
 - `@DataJdbcTest`
