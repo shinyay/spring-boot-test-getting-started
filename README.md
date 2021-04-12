@@ -137,6 +137,33 @@ Static factory methods for ResultMatcher-based result actions.
   - available via `MockMvcResultMatchers.header()`
   - Factory for response header assertions
 
+#### Web Flux Slice Test with `@WebFluxTest`
+
+#### REST Clients Slice Test with `@RestClientTest`
+- RestTemplateBuilder
+- MockRestServiceServer
+
+- `Not Included`
+  - @Controller
+  - @Service
+  - @Component
+  - @Repository
+
+##### Test Practices - MockRestServiceServer
+@RestClientTest annotation is used to test RestTemplate to interact with external services.
+The Spring Test module includes a mock server named MockRestServiceServer.
+With this approach, we configure the server to return a particular object when a specific request is dispatched through our RestTemplate instance.
+
+```kotlin
+mockServer.expect(ExpectedCount.once(), 
+  requestTo(new URI("http://localhost:8080/employee/E001")))
+  .andExpect(method(HttpMethod.GET))
+  .andRespond(withStatus(HttpStatus.OK)
+  .contentType(MediaType.APPLICATION_JSON)
+  .body(mapper.writeValueAsString(emp))
+)
+```
+
 #### JPA Components Slice Test with `@DataJpaTest`
 `@DataJpaTest` makes you can test any JPA related parts.
 - @Repository
@@ -249,31 +276,6 @@ Test class can not load Repository class. Therefore we should use `@Import` to l
   - @Service
   - @Component
   - @Repository
-  
-#### REST  Clients Slice Test with `@RestClientTest`
-- RestTemplateBuilder
-- MockRestServiceServer
-
-- `Not Included`
-  - @Controller
-  - @Service
-  - @Component
-  - @Repository
-
-##### Test Practices - MockRestServiceServer
-@RestClientTest annotation is used to test RestTemplate to interact with external services.
-The Spring Test module includes a mock server named MockRestServiceServer.
-With this approach, we configure the server to return a particular object when a specific request is dispatched through our RestTemplate instance.
-
-```kotlin
-mockServer.expect(ExpectedCount.once(), 
-  requestTo(new URI("http://localhost:8080/employee/E001")))
-  .andExpect(method(HttpMethod.GET))
-  .andRespond(withStatus(HttpStatus.OK)
-  .contentType(MediaType.APPLICATION_JSON)
-  .body(mapper.writeValueAsString(emp))
-)
-```
 
 #### Whole Application Test with `@SpringBootTest`
 - Everything included
@@ -296,6 +298,7 @@ mockServer.expect(ExpectedCount.once(),
 ## Installation
 
 ## References
+- [Spring Boot Feature - Testing](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-testing)
 - [MockMvcResultMatchers API Document](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/web/servlet/result/MockMvcResultMatchers.html)
 - [Sliced Test Auto-configuration Annotations](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-test-auto-configuration.html)
 
