@@ -242,7 +242,7 @@ Test class can not load Repository class. Therefore we should use `@Import` to l
   - @Component
   - @Repository
 
-##### MockRestServiceServer
+##### Test Practices - MockRestServiceServer
 @RestClientTest annotation is used to test RestTemplate to interact with external services.
 The Spring Test module includes a mock server named MockRestServiceServer.
 With this approach, we configure the server to return a particular object when a specific request is dispatched through our RestTemplate instance.
