@@ -76,8 +76,8 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 |`@WebFluxTest`|CacheAutoConfiguration<br>MessageSourceAutoConfiguration<br>FreeMarkerAutoConfiguration<br>GsonAutoConfiguration<br>CodecsAutoConfiguration<br>JacksonAutoConfiguration<br>JsonbAutoConfiguration<br>MustacheAutoConfiguration<br>ReactiveOAuth2ClientAutoConfiguration<br>ReactiveOAuth2ResourceServerAutoConfiguration<br>ReactiveSecurityAutoConfiguration<br>ReactiveUserDetailsServiceAutoConfiguration<br>ThymeleafAutoConfiguration<br>ValidationAutoConfiguration<br>WebFluxAutoConfiguration<br>ErrorWebFluxAutoConfiguration<br>WebTestClientAutoConfiguration|
 |`@RestClientTest`|CacheAutoConfiguration<br>GsonAutoConfiguration<br>HttpMessageConvertersAutoConfiguration<br>CodecsAutoConfiguration<br>JacksonAutoConfiguration<br>JsonbAutoConfiguration<br>RestTemplateAutoConfiguration<br>WebClientAutoConfiguration<br>MockRestServiceServerAutoConfiguration<br>WebClientRestTemplateAutoConfiguration|
 |`@DataJdbcTest`|CacheAutoConfiguration<br>JdbcRepositoriesAutoConfiguration<br>FlywayAutoConfiguration<br>DataSourceAutoConfiguration<br>DataSourceTransactionManagerAutoConfiguration<br>JdbcTemplateAutoConfiguration<br>LiquibaseAutoConfiguration<br>TransactionAutoConfiguration<br>TestDatabaseAutoConfiguration|
-||<br><br><br><br><br><br><br><br><br>|
-|||
+|`@DataJpaTest`|CacheAutoConfiguration<br>JpaRepositoriesAutoConfiguration<br>FlywayAutoConfiguration<br>DataSourceAutoConfiguration<br>DataSourceTransactionManagerAutoConfiguration<br>JdbcTemplateAutoConfiguration<br>LiquibaseAutoConfiguration<br>HibernateJpaAutoConfiguration<br>TransactionAutoConfiguration<br>TestDatabaseAutoConfiguration<br>TestEntityManagerAutoConfiguration|
+||<br><br><br><br><br><br><br><br><br><br><br><br><br>|
 |||
 |||
 |||
@@ -86,7 +86,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 |||
 |||
 
-- `@DataJpaTest`
+- 
 - `@DataMongoTest`
 - `@DataRedisTest`
 - `@DataLdapTest`
