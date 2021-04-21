@@ -83,14 +83,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 |`@DataCassandraTest`|CacheAutoConfiguration<br>CassandraAutoConfiguration<br>CassandraDataAutoConfiguration<br>CassandraReactiveDataAutoConfiguration<br>CassandraReactiveRepositoriesAutoConfiguration<br>CassandraRepositoriesAutoConfiguration|
 |`@JdbcTest`|CacheAutoConfiguration<br>FlywayAutoConfiguration<br>DataSourceAutoConfiguration<br>DataSourceTransactionManagerAutoConfiguration<br>JdbcTemplateAutoConfiguration<br>LiquibaseAutoConfiguration<br>TransactionAutoConfiguration<br>TestDatabaseAutoConfiguration|
 |`@DataLdapTest`|CacheAutoConfiguration<br>LdapRepositoriesAutoConfiguration<br>LdapAutoConfiguration<br>EmbeddedLdapAutoConfiguration|
-||<br><br><br>|
-|||
-
-
-- 
-- `@DataLdapTest`
-- `@JsonTest`
-- (`@SpringBootTest`)
+|`@JsonTest`|CacheAutoConfiguration<br>GsonAutoConfiguration<br>JacksonAutoConfiguration<br>JsonbAutoConfiguration<br>JsonTestersAutoConfiguration|
 
 Reference: [Test Auto-configuration Annotations](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-test-auto-configuration.html)
 
