@@ -82,8 +82,8 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 |`@DataRedisTest`|CacheAutoConfiguration<br>RedisAutoConfiguration<br>RedisRepositoriesAutoConfiguration|
 |`@DataCassandraTest`|CacheAutoConfiguration<br>CassandraAutoConfiguration<br>CassandraDataAutoConfiguration<br>CassandraReactiveDataAutoConfiguration<br>CassandraReactiveRepositoriesAutoConfiguration<br>CassandraRepositoriesAutoConfiguration|
 |`@JdbcTest`|CacheAutoConfiguration<br>FlywayAutoConfiguration<br>DataSourceAutoConfiguration<br>DataSourceTransactionManagerAutoConfiguration<br>JdbcTemplateAutoConfiguration<br>LiquibaseAutoConfiguration<br>TransactionAutoConfiguration<br>TestDatabaseAutoConfiguration|
-||<br>|
-|||
+|`@DataLdapTest`|CacheAutoConfiguration<br>LdapRepositoriesAutoConfiguration<br>LdapAutoConfiguration<br>EmbeddedLdapAutoConfiguration|
+||<br><br><br>|
 |||
 
 
