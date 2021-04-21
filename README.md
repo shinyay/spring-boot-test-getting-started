@@ -78,8 +78,8 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 |`@DataJdbcTest`|CacheAutoConfiguration<br>JdbcRepositoriesAutoConfiguration<br>FlywayAutoConfiguration<br>DataSourceAutoConfiguration<br>DataSourceTransactionManagerAutoConfiguration<br>JdbcTemplateAutoConfiguration<br>LiquibaseAutoConfiguration<br>TransactionAutoConfiguration<br>TestDatabaseAutoConfiguration|
 |`@DataJpaTest`|CacheAutoConfiguration<br>JpaRepositoriesAutoConfiguration<br>FlywayAutoConfiguration<br>DataSourceAutoConfiguration<br>DataSourceTransactionManagerAutoConfiguration<br>JdbcTemplateAutoConfiguration<br>LiquibaseAutoConfiguration<br>HibernateJpaAutoConfiguration<br>TransactionAutoConfiguration<br>TestDatabaseAutoConfiguration<br>TestEntityManagerAutoConfiguration|
 |`@DataR2dbcTest`|R2dbcDataAutoConfiguration<br>R2dbcRepositoriesAutoConfiguration<br>FlywayAutoConfiguration<br>LiquibaseAutoConfiguration<br>R2dbcAutoConfiguration<br>R2dbcTransactionManagerAutoConfiguration<br>TransactionAutoConfiguration|
-||<br><br><br><br><br><br><br>|
-|||
+|`@DataMongoTest`|CacheAutoConfiguration<br>MongoDataAutoConfiguration<br>MongoReactiveDataAutoConfiguration<br>MongoReactiveRepositoriesAutoConfiguration<br>MongoRepositoriesAutoConfiguration<br>MongoAutoConfiguration<br>EmbeddedMongoAutoConfiguration<br>TransactionAutoConfiguration|
+||<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|
 |||
 |||
 |||
