@@ -21,9 +21,9 @@ class WebFluxController {
 
     @GetMapping("/fluxtime")
     fun timeAndMessage(): Flux<String> {
-        return Flux.just("Current Time",
+        return Flux.just("Current Time:",
             ZonedDateTime.now(ZoneId.of("Japan")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")),
-            "Now"
+            "[Now]"
         )
     }
 }
