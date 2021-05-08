@@ -7,5 +7,6 @@ class HamcrestService {
 
     fun returnStringValue() = "foo"
 
+    fun returnBlank() = ""
 
 }
