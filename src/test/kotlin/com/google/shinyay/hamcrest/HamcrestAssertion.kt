@@ -26,7 +26,12 @@ class HamcrestAssertion {
     }
 
     @Test
-    fun sendCharacter() {
+    fun endCharacter() {
         assertThat(hamcrestService.returnStringValue(), `is`(endsWith("o")))
+    }
+
+    @Test
+    fun containCharacter() {
+        assertThat(hamcrestService.returnStringValue(), `is`(containsString("fo")))
     }
 }
