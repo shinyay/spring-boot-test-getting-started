@@ -39,4 +39,9 @@ class HamcrestAssertion {
     fun ignoreCaseCharacter() {
         assertThat(hamcrestService.returnStringValue(), `is`(equalToIgnoringCase("FOO")))
     }
+
+    @Test
+    fun shouldHaveBlank() {
+        assertThat(hamcrestService.returnBlank(), `is`(emptyString()))
+    }
 }
