@@ -63,6 +63,12 @@ class HamcrestAssertion {
     fun shouldBeInAnyOrder() {
         assertThat(hamcrestService.returnStringList(), `is`(containsInAnyOrder("Carol", "Bob", "Alice")))
     }
+
+    // hasItem()
+    @Test
+    fun shouldHaveItem() {
+        assertThat(hamcrestService.returnStringList(), `is`(hasItem("Bob")))
+    }
 //    ---------------------------------------------------------------
 
     // greaterThan() or greaterThanOrEqualTo()
