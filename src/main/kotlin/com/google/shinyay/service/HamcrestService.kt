@@ -9,4 +9,6 @@ class HamcrestService {
 
     fun returnBlank() = ""
 
+    fun returnStringList() = listOf<String>("Alice", "Bob", "Carol")
+
 }
