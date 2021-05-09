@@ -12,4 +12,11 @@ class HamcrestService {
     fun returnStringList() = listOf<String>("Alice", "Bob", "Carol")
 
     fun returnRandomNumber() = (1..10).random()
+
+    fun returnPeople() = People("Alice", 20)
+
+    data class People(
+        val name: String,
+        val age: Int
+    )
 }
