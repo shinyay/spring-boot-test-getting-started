@@ -59,10 +59,10 @@ class HamcrestAssertion {
 
 //    ---------------------------------------------------------------
 
-    // greaterThan()
+    // greaterThan() or greaterThanOrEqualTo()
     @Test
     fun shouldBePositiveInteger() {
-        assertThat(hamcrestService.returnRandomNumber(), `is`(greaterThan(1)))
+        assertThat(hamcrestService.returnRandomNumber(), `is`(greaterThanOrEqualTo(1)))
     }
 
 }
