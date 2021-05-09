@@ -72,10 +72,15 @@ class HamcrestAssertion {
 
     // hasItems()
     @Test
-    fun shouldHavAllItems() {
+    fun shouldHaveAllItems() {
         assertThat(hamcrestService.returnStringList(), `is`(hasItems("Bob")))
     }
 
+    // hasItems()
+    @Test
+    fun shouldHaveSize() {
+        assertThat(hamcrestService.returnStringList(), `is`(hasSize(3)))
+    }
 //    ---------------------------------------------------------------
 
     // greaterThan() or greaterThanOrEqualTo()
