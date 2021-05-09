@@ -4,7 +4,6 @@ import com.google.shinyay.service.HamcrestService
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.*
 import org.junit.jupiter.api.Test
-import org.springframework.beans.factory.annotation.Autowired
 
 class HamcrestAssertion {
 
@@ -60,5 +59,10 @@ class HamcrestAssertion {
 
 //    ---------------------------------------------------------------
 
+    // greaterThan()
+    @Test
+    fun shouldBePositiveInteger() {
+        assertThat(hamcrestService.returnRandomNumber(), `is`(greaterThan(1)))
+    }
 
 }
