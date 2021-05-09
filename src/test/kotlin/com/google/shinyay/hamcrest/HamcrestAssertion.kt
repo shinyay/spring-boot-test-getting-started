@@ -44,4 +44,9 @@ class HamcrestAssertion {
     fun shouldHaveBlank() {
         assertThat(hamcrestService.returnBlank(), `is`(emptyString()))
     }
+
+    @Test
+    fun shouldElementsInOrder() {
+        assertThat(hamcrestService.returnStringList().toString(), `is`(stringContainsInOrder("Alice", "Bob", "Carol")))
+    }
 }
