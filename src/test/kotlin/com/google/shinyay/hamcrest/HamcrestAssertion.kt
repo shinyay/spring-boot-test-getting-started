@@ -106,4 +106,10 @@ class HamcrestAssertion {
         assertThat(hamcrestService.returnGirl(), `is`(hasProperty("age", greaterThanOrEqualTo(20))))
     }
 
+    @Test
+    fun shouldHaveAllSameProperties() {
+        assertThat(hamcrestService.returnGirl(), `is`(samePropertyValuesAs(hamcrestService.returnPeople("Alice", 20, "Female"))))
+        assertThat(hamcrestService.returnGirl(), `is`(samePropertyValuesAs(hamcrestService.returnPeople("Carol", 20, "Female"), "name")))
+    }
+
 }
