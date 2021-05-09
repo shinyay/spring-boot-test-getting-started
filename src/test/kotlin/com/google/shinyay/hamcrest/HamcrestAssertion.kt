@@ -81,6 +81,7 @@ class HamcrestAssertion {
     fun shouldHaveSize() {
         assertThat(hamcrestService.returnStringList(), `is`(hasSize(3)))
     }
+
 //    ---------------------------------------------------------------
 
     // greaterThan() or greaterThanOrEqualTo()
@@ -93,6 +94,14 @@ class HamcrestAssertion {
     @Test
     fun shouldBeLess() {
         assertThat(hamcrestService.returnRandomNumber(), `is`(lessThanOrEqualTo(10)))
+    }
+
+//    ---------------------------------------------------------------
+
+    @Test
+    fun shouldHaveProperty() {
+        assertThat(hamcrestService.returnPeople(), `is`(hasProperty("name")))
+        assertThat(hamcrestService.returnPeople(), `is`(hasProperty("age")))
     }
 
 }
