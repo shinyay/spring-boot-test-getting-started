@@ -13,10 +13,12 @@ class HamcrestService {
 
     fun returnRandomNumber() = (1..10).random()
 
-    fun returnPeople() = People("Alice", 20)
+    fun returnGirl() = People("Alice", 20)
+    fun returnBoy() = People("Bob", 20, "Male")
 
     data class People(
         val name: String,
-        val age: Int
+        val age: Int,
+        val gender: String = "Female"
     )
 }
