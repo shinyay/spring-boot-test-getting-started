@@ -15,6 +15,7 @@ class HamcrestService {
 
     fun returnGirl() = People("Alice", 20)
     fun returnBoy() = People("Bob", 20, "Male")
+    fun returnPeople(name: String, age: Int, gender: String) = People(name, age, gender)
 
     data class People(
         val name: String,
