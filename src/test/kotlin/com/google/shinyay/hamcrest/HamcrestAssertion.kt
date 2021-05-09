@@ -101,9 +101,9 @@ class HamcrestAssertion {
     // hasProperty()
     @Test
     fun shouldHaveProperty() {
-        assertThat(hamcrestService.returnPeople(), `is`(hasProperty("name")))
-        assertThat(hamcrestService.returnPeople(), `is`(hasProperty("age")))
-        assertThat(hamcrestService.returnPeople(), `is`(hasProperty("age", greaterThanOrEqualTo(20))))
+        assertThat(hamcrestService.returnGirl(), `is`(hasProperty("name")))
+        assertThat(hamcrestService.returnGirl(), `is`(hasProperty("age")))
+        assertThat(hamcrestService.returnGirl(), `is`(hasProperty("age", greaterThanOrEqualTo(20))))
     }
 
 }
