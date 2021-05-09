@@ -10,43 +10,55 @@ class HamcrestAssertion {
 
     private val hamcrestService = HamcrestService()
 
+    // is()
     @Test
     fun sameValue() {
         assertThat(hamcrestService.returnStringValue(), `is`("foo"))
     }
 
+    // not()
     @Test
     fun notSameValue() {
         assertThat(hamcrestService.returnStringValue(), `is`(not("bar")))
     }
 
+    // startsWith()
     @Test
     fun startCharacter() {
         assertThat(hamcrestService.returnStringValue(), `is`(startsWith("f")))
     }
 
+    // endsWith()
     @Test
     fun endCharacter() {
         assertThat(hamcrestService.returnStringValue(), `is`(endsWith("o")))
     }
 
+    // containsString()
     @Test
     fun containCharacter() {
         assertThat(hamcrestService.returnStringValue(), `is`(containsString("fo")))
     }
 
+    // equalToIgnoringCase()
     @Test
     fun ignoreCaseCharacter() {
         assertThat(hamcrestService.returnStringValue(), `is`(equalToIgnoringCase("FOO")))
     }
 
+    // emptyString() or emptyOrNullString()
     @Test
     fun shouldHaveBlank() {
         assertThat(hamcrestService.returnBlank(), `is`(emptyString()))
     }
 
+    // stringContainsInOrder()
     @Test
     fun shouldElementsInOrder() {
         assertThat(hamcrestService.returnStringList().toString(), `is`(stringContainsInOrder("Alice", "Bob", "Carol")))
     }
+
+//    ---------------------------------------------------------------
+
+
 }
