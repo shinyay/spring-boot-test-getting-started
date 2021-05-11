@@ -87,12 +87,20 @@ class HamcrestAssertion {
         assertThat(hamcrestService.returnStringList(), `is`(hasSize(3)))
     }
 
-//    Number ---------------------------------------------------------------
+//    Map ---------------------------------------------------------------
 
-    //
+    // emptyMap()
     @Test
     fun shouldBeEmptyMap() {
         assertThat(hamcrestService.returnMutableMap(), `is`(emptyMap<String, String>()))
+    }
+
+    // emptyMap()
+    @Test
+    fun shouldHaveKey() {
+        val testMap = hamcrestService.returnMutableMap()
+        testMap["language"] = "Japanese"
+        assertThat(testMap, `is`(hasKey("language")))
     }
 
 //    Number ---------------------------------------------------------------
