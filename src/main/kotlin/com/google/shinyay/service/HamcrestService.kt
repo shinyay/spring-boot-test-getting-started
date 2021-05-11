@@ -15,6 +15,8 @@ class HamcrestService {
 
     fun returnRandomDoubleNumber() = Math.random()*10
 
+    fun returnMutableMap() = mutableMapOf<String, String>()
+
     fun returnGirl() = People("Alice", 20)
     fun returnBoy() = People("Bob", 20, "Male")
     fun returnPeople(name: String, age: Int, gender: String) = People(name, age, gender)
