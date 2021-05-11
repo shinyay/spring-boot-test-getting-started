@@ -273,7 +273,12 @@ Test class can not load Repository class. Therefore we should use `@Import` to l
 #### Whole Application Test with `@SpringBootTest`
 - Everything included
 
+### Assertion Library
+Third-party Assertion Libraries:
 
+- [AssertJ](https://joel-costigliola.github.io/assertj/)
+- [Hamcrest](http://hamcrest.org/JavaHamcrest/index)
+- [Truth](https://truth.dev/)
 
 
 
