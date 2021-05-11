@@ -89,6 +89,14 @@ class HamcrestAssertion {
 
 //    Number ---------------------------------------------------------------
 
+    //
+    @Test
+    fun shouldBeEmptyMap() {
+        assertThat(hamcrestService.returnMutableMap(), `is`(emptyMap<Int, String>()))
+    }
+
+//    Number ---------------------------------------------------------------
+
     // closeTo()
     @Test
     fun shouldBeInRange() {
