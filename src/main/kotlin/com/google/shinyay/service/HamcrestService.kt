@@ -11,7 +11,9 @@ class HamcrestService {
 
     fun returnStringList() = listOf<String>("Alice", "Bob", "Carol")
 
-    fun returnRandomNumber() = (1..10).random()
+    fun returnRandomIntNumber() = (1..10).random()
+
+    fun returnRandomDoubleNumber() = Math.random()*10
 
     fun returnGirl() = People("Alice", 20)
     fun returnBoy() = People("Bob", 20, "Male")
