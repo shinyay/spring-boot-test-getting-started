@@ -9,6 +9,8 @@ class HamcrestAssertion {
 
     private val hamcrestService = HamcrestService()
 
+//    Basic ---------------------------------------------------------------
+
     // is()
     @Test
     fun sameValue() {
@@ -20,6 +22,8 @@ class HamcrestAssertion {
     fun notSameValue() {
         assertThat(hamcrestService.returnStringValue(), `is`(not("bar")))
     }
+
+//    String ---------------------------------------------------------------
 
     // startsWith()
     @Test
@@ -82,18 +86,24 @@ class HamcrestAssertion {
         assertThat(hamcrestService.returnStringList(), `is`(hasSize(3)))
     }
 
-//    ---------------------------------------------------------------
+//    Number ---------------------------------------------------------------
+
+    // closeTo()
+    @Test
+    fun shouldBeInRange() {
+        assertThat(hamcrestService.returnRandomDoubleNumber(), `is`(closeTo(0.0, 10.0)))
+    }
 
     // greaterThan() or greaterThanOrEqualTo()
     @Test
     fun shouldBeGreater() {
-        assertThat(hamcrestService.returnRandomNumber(), `is`(greaterThanOrEqualTo(1)))
+        assertThat(hamcrestService.returnRandomIntNumber(), `is`(greaterThanOrEqualTo(1)))
     }
 
     // lessThanOrEqualTo()
     @Test
     fun shouldBeLess() {
-        assertThat(hamcrestService.returnRandomNumber(), `is`(lessThanOrEqualTo(10)))
+        assertThat(hamcrestService.returnRandomIntNumber(), `is`(lessThanOrEqualTo(10)))
     }
 
 //    ---------------------------------------------------------------
