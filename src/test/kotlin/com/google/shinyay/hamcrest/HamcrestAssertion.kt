@@ -92,7 +92,7 @@ class HamcrestAssertion {
     //
     @Test
     fun shouldBeEmptyMap() {
-        assertThat(hamcrestService.returnMutableMap(), `is`(emptyMap<Int, String>()))
+        assertThat(hamcrestService.returnMutableMap(), `is`(emptyMap<String, String>()))
     }
 
 //    Number ---------------------------------------------------------------
