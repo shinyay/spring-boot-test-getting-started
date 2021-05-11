@@ -61,6 +61,7 @@ class HamcrestAssertion {
         assertThat(hamcrestService.returnStringList().toString(), `is`(stringContainsInOrder("Alice", "Bob", "Carol")))
     }
 
+//    Collection ---------------------------------------------------------------
 
     // containsInAnyOrder()
     @Test
@@ -80,7 +81,7 @@ class HamcrestAssertion {
         assertThat(hamcrestService.returnStringList(), `is`(hasItems("Bob")))
     }
 
-    // hasItems()
+    // hasSize()
     @Test
     fun shouldHaveSize() {
         assertThat(hamcrestService.returnStringList(), `is`(hasSize(3)))
