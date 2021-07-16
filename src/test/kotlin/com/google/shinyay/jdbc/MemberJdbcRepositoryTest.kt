@@ -15,6 +15,6 @@ class MemberJdbcRepositoryTest(@Autowired val memberJdbcRepository: MemberJdbcRe
 
     @Test
     fun whenInjectInMemoryDataSource_thenReturnCorrectMemberCount() {
-        assertThat(memberJdbcRepository.getCountOfMembers()).isEqualTo(3)
+        assertThat(memberJdbcRepository.getCountOfMembers()).isEqualTo(4)
     }
 }
